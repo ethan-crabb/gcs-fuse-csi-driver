@@ -31,4 +31,9 @@ ARG TARGETPLATFORM
 COPY ./bin/${TARGETPLATFORM}/gcsfuse /gcsfuse
 COPY --from=sidecar-mounter-builder /bin/gcs-fuse-csi-driver-sidecar-mounter /gcs-fuse-csi-driver-sidecar-mounter
 
-ENTRYPOINT ["/gcs-fuse-csi-driver-sidecar-mounter"]
+COPY start.sh /
+COPY mitmdump /
+COPY rewriteCacheHeaders.py /
+
+ENTRYPOINT [ "start.sh" ]
+# ENTRYPOINT ["/gcs-fuse-csi-driver-sidecar-mounter"]
