@@ -14,7 +14,7 @@ openssl x509 -in mitmproxy-ca-cert.pem -inform PEM -out mitmproxy-ca-cert.crt
 cp mitmproxy-ca-cert.crt /usr/local/share/ca-certificates/extra/mitmproxy-ca-cert.crt 
 update-ca-certificates
 
-/gcs-fuse-csi-driver-sidecar-mounte
+/gcs-fuse-csi-driver-sidecar-mounter
 # # Start gcsfuse 
 # http_proxy=http://127.0.0.1:8082 https_proxy=http://127.0.0.1:8082 mount -t gcsfuse -o allow_other,file_mode=777,dir_mode=777,key_file=/service-account-key.json wag3r-live-media /tmp/ls_media &
 # Start our NGINX RTMP server
